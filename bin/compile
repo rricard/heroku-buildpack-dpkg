@@ -34,9 +34,8 @@ DPKG_CACHE_DIR="$CACHE_DIR/dpkg/cache"
 mkdir -p $DPKG_CACHE_DIR
 
 for URL in $(cat $BUILD_DIR/Debfile); do
-  topic "Fetching $URL"
+  topic "Fetching $URL in $DPKG_CACHE_DIR"
   cd $DPKG_CACHE_DIR && { curl -O $URL ; cd -; }
-  
 done
 
 mkdir -p $BUILD_DIR/.dpkg
