@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
+# fail fast
+set -e
+
+# debug
+# set -x
+
+# parse and derive params
+BUILD_DIR=$1
+CACHE_DIR=$2
+LP_DIR=`cd $(dirname $0); cd ..; pwd`
+
+function error() {
+  echo " !     $*" >&2
+  exit 1
+}
+
+function topic() {
+  echo "-----> $*"
+}
+
+function indent() {
+  c='s/^/       /'
+  case $(uname) in
+	Darwin) sed -l "$c";;
+	*)      sed -u "$c";;
+  esac
+}
+
+DPKG_CACHE_DIR="$CACHE_DIR/dpkg/cache"
+
+mkdir -p $DPKG_CACHE_DIR
+
+for URL in $(cat $BUILD_DIR/Debfile); do
+  topic "Fetching $URL"
+  cd $DPKG_CACHE_DIR
+  curl -O $URL
+done
+
+mkdir -p $BUILD_DIR/.dpkg
+
+for DEB in $(ls -1 $DPKG_CACHE_DIR/*.deb); do
+  topic "Installing $(basename $DEB)"
+  dpkg -x $DEB $BUILD_DIR/.dpkg/
+done
+
+topic "Writing profile script"
+mkdir -p $BUILD_DIR/.profile.d
+cat <<EOF >$BUILD_DIR/.profile.d/000_dpkg.sh
+export PATH="\$HOME/.dpkg/usr/bin:$PATH"
+export LD_LIBRARY_PATH="\$HOME/.dpkg/usr/lib:\$LD_LIBRARY_PATH"
+export INCLUDE_PATH="\$HOME/.dpkg/usr/include:\$INCLUDE_PATH"
+export CPATH="\$INCLUDE_PATH"
+export CPPPATH="\$INCLUDE_PATH"
+export PYTHONPATH="\$HOME/.dpkg/usr/lib/python2.6/dist-packages"
+EOF
+
+export PATH="$BUILD_DIR/.dpkg/usr/bin:$PATH"
+export LD_LIBRARY_PATH="$BUILD_DIR/.dpkg/usr/lib:$LD_LIBRARY_PATH"
+export INCLUDE_PATH="$BUILD_DIR/.dpkg/usr/include:$INCLUDE_PATH"
+export CPATH="$INCLUDE_PATH"
+export CPPPATH="$INCLUDE_PATH"
+
