@@ -20,7 +20,25 @@ Include a list of packages urls to be installed in a file named `Debfile`
 #### Debfile
 
 
-    
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/fontforge_0.0.20120828%2Bgit1-1ubuntu8_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/fontforge-dbg_0.0.20120828%2Bgit1-1ubuntu8_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libfontforge-dev_0.0.20120828%2Bgit1-1ubuntu8_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libfontforge1_0.0.20120828%2Bgit1-1ubuntu8_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libgdraw4_0.0.20120828%2Bgit1-1ubuntu8_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/python-fontforge_0.0.20120828%2Bgit1-1ubuntu8_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/gir1.2-poppler-0.18_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libpoppler-cpp-dev_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libpoppler-cpp0_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libpoppler-dev_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libpoppler-glib-dev_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libpoppler-glib8_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libpoppler-private-dev_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libpoppler-qt4-4_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libpoppler-qt4-dev_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/libpoppler27_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/poppler-dbg_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/poppler-utils_0.20.3-2ubuntu1pdf2htmlEX_amd64.deb
+    https://launchpad.net/~coolwanglu/+archive/pdf2htmlex/+files/pdf2htmlex_0.6-1~git201210292011r7993a-0ubuntu1_amd64.deb
 
 
     
