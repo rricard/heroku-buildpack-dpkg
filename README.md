@@ -46,7 +46,7 @@ Include a list of packages urls to be installed in a file named `Debfile`
 
     $ heroku plugins:install https://github.com/ddollar/heroku-build
     
-    $ heroku create apt-pg-test
+    $ heroku create dpkg-pdf2htmlex-test
     
     $ heroku build . -b ddollar/multi -r 
 	Checking for app files to sync... done, 2 files needed
